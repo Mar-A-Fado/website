@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navigation = ({ lang, setLang, t }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [langOpen, setLangOpen] = useState(false);
+    const location = useLocation();
 
     const toggleMenu = () => setIsOpen(!isOpen);
     const switchLang = (l) => {
@@ -11,46 +13,40 @@ const Navigation = ({ lang, setLang, t }) => {
     };
 
     const navLinks = [
-        { key: 'home', label: t.nav.home },
-        { key: 'about', label: t.nav.about },
-        { key: 'services', label: t.nav.services },
-        { key: 'contact', label: t.nav.contact },
+        { key: '/', label: t.nav.home },
+        { key: '/about', label: t.nav.about },
+        { key: '/vision', label: t.nav.vision },
+        { key: '/policies', label: t.nav.policies },
+        { key: '/services', label: t.nav.services },
+        { key: '/contact', label: t.nav.contact },
     ];
-
-    const scrollToSection = (id) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-        setIsOpen(false);
-    };
 
     return (
         <nav className="fixed w-full z-50 bg-white/95 backdrop-blur shadow-sm transition-all duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
 
-                    <div className="flex-shrink-0 cursor-pointer" onClick={() => scrollToSection('home')}>
+                    <Link to="/" className="shrink-0 cursor-pointer">
                         <img className="h-12 w-auto" src="/assets/logo_ahq.png" alt="Mar A Fado Logo" />
-                    </div>
+                    </Link>
 
 
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden lg:flex items-center space-x-6">
                         {navLinks.map((link) => (
-                            <button
+                            <Link
                                 key={link.key}
-                                onClick={() => scrollToSection(link.key)}
-                                className="text-dark-gray hover:text-deep-blue font-medium transition-colors cursor-pointer"
+                                to={link.key}
+                                className={`text-sm uppercase font-semibold transition-colors duration-200 ${location.pathname === link.key ? 'text-deep-blue' : 'text-gray-600 hover:text-deep-blue'}`}
                             >
                                 {link.label}
-                            </button>
+                            </Link>
                         ))}
 
 
-                        <div className="relative">
+                        <div className="relative ml-4">
                             <button
                                 onClick={() => setLangOpen(!langOpen)}
-                                className="flex items-center text-dark-gray focus:outline-none font-semibold uppercase hover:text-deep-blue transition-colors"
+                                className="flex items-center text-dark-gray focus:outline-none font-bold uppercase hover:text-deep-blue transition-colors px-3 py-1 border border-gray-200 rounded-md"
                             >
                                 {lang}
                                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +54,7 @@ const Navigation = ({ lang, setLang, t }) => {
                                 </svg>
                             </button>
                             {langOpen && (
-                                <div className="absolute right-0 mt-2 w-24 bg-white rounded-md shadow-lg py-1 border border-gray-100">
+                                <div className="absolute right-0 mt-2 w-24 bg-white rounded-md shadow-lg py-1 border border-gray-100 z-50">
                                     {['pt', 'en', 'fr'].map((l) => (
                                         <button
                                             key={l}
@@ -74,7 +70,7 @@ const Navigation = ({ lang, setLang, t }) => {
                     </div>
 
 
-                    <div className="md:hidden flex items-center">
+                    <div className="lg:hidden flex items-center">
                         <button onClick={toggleMenu} className="text-dark-gray hover:text-deep-blue focus:outline-none">
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 {isOpen ? (
@@ -90,24 +86,25 @@ const Navigation = ({ lang, setLang, t }) => {
 
 
             {isOpen && (
-                <div className="md:hidden bg-white border-t border-gray-100 shadow-lg">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg h-screen sticky top-20 overflow-y-auto">
+                    <div className="px-2 pt-2 pb-20 space-y-1 sm:px-3">
                         {navLinks.map((link) => (
-                            <button
+                            <Link
                                 key={link.key}
-                                onClick={() => scrollToSection(link.key)}
-                                className="block w-full text-left px-3 py-2 text-base font-medium text-dark-gray hover:text-deep-blue hover:bg-gray-50 rounded-md"
+                                to={link.key}
+                                onClick={() => setIsOpen(false)}
+                                className={`block w-full text-left px-3 py-4 text-base font-semibold border-b border-gray-50 ${location.pathname === link.key ? 'text-deep-blue bg-blue-50/50' : 'text-gray-600 hover:text-deep-blue hover:bg-gray-50'}`}
                             >
                                 {link.label}
-                            </button>
+                            </Link>
                         ))}
-                        <div className="border-t border-gray-100 pt-2 mt-2">
-                            <div className="flex justify-around px-4">
+                        <div className="pt-8 pb-4">
+                            <div className="flex justify-center space-x-4">
                                 {['pt', 'en', 'fr'].map((l) => (
                                     <button
                                         key={l}
                                         onClick={() => { switchLang(l); setIsOpen(false); }}
-                                        className={`px-3 py-2 text-sm font-bold uppercase ${l === lang ? 'text-deep-blue bg-blue-50 rounded-full' : 'text-gray-500'}`}
+                                        className={`w-12 h-12 flex items-center justify-center text-sm font-bold uppercase rounded-full border ${l === lang ? 'text-white bg-deep-blue border-deep-blue' : 'text-gray-500 border-gray-200'}`}
                                     >
                                         {l}
                                     </button>

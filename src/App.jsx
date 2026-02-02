@@ -1,28 +1,48 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import WhyUs from './components/WhyUs';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import VisionMissionValues from './pages/VisionMissionValues';
+import Policies from './pages/Policies';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
 import { translations } from './data/translations';
+
+// ScrollToTop helper component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 function App() {
   const [lang, setLang] = useState('pt');
-
   const t = translations[lang];
 
   return (
-    <div className="font-sans text-gray-900 bg-cream">
-      <Navigation lang={lang} setLang={setLang} t={t} />
-      <Hero t={t} />
-      <WhyUs t={t} />
-      <About t={t} />
-      <Services t={t} />
-      <Contact t={t} />
-      <Footer t={t} />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="font-sans text-gray-900 bg-cream flex flex-col min-h-screen">
+        <Navigation lang={lang} setLang={setLang} t={t} />
+
+        <main className="grow">
+          <Routes>
+            <Route path="/" element={<Home t={t} />} />
+            <Route path="/about" element={<About t={t} />} />
+            <Route path="/vision" element={<VisionMissionValues t={t} />} />
+            <Route path="/policies" element={<Policies t={t} />} />
+            <Route path="/services" element={<Services t={t} />} />
+            <Route path="/contact" element={<Contact t={t} />} />
+          </Routes>
+        </main>
+
+        <Footer t={t} />
+      </div>
+    </Router>
   );
 }
 

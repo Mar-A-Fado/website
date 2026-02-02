@@ -9,7 +9,6 @@ const Contact = ({ t }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // In a real app, integrate EmailJS here
         console.log('Form submitted:', formData);
         alert('Thank you for contacting us! We will get back to you soon.');
         setFormData({ name: '', email: '', message: '' });
@@ -20,12 +19,12 @@ const Contact = ({ t }) => {
     }
 
     return (
-        <section id="contact" className="py-20 bg-white border-t border-gray-100">
+        <section className="pt-28 pb-20 bg-white border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-dark-gray">{t.contact.title}</h2>
-                    <div className="mt-2 w-24 h-1 bg-deep-blue mx-auto rounded-full"></div>
+                    <h1 className="text-4xl md:text-5xl font-bold text-dark-gray mb-4">{t.contact.title}</h1>
+                    <div className="w-24 h-1 bg-deep-blue mx-auto rounded-full"></div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">

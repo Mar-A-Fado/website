@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = ({ t }) => {
     const chimneyRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -15,22 +17,15 @@ const Hero = ({ t }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToServices = () => {
-        const element = document.getElementById('services');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
-        <div id="home" className="relative bg-cream min-h-screen flex items-center overflow-hidden pt-20">
+        <div className="relative bg-cream min-h-screen flex items-center overflow-hidden pt-20">
 
             <div className="absolute right-0 top-20 md:top-0 w-full md:w-1/2 h-full opacity-10 md:opacity-100 pointer-events-none z-0 flex justify-end items-center">
                 <img
                     ref={chimneyRef}
                     src="/assets/chaminehq.png"
                     alt="Chimney"
-                    className="h-[80vh] md:h-[90vh] object-contain object-right-bottom translate-x-1/4 md:translate-x-0"
+                    className="h-[80vh] md:h-[90vh] object-contain object-bottom-right translate-x-1/4 md:translate-x-0"
                 />
             </div>
 
@@ -40,11 +35,11 @@ const Hero = ({ t }) => {
                         {t.hero.title}
                     </h1>
                     <p className="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed font-light animate-fade-in-up delay-100">
-                        {t.hero.subtitle}
+                        {t.hero.description}
                     </p>
                     <div className="animate-fade-in-up delay-200">
                         <button
-                            onClick={scrollToServices}
+                            onClick={() => navigate('/services')}
                             className="bg-deep-blue text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center"
                         >
                             {t.hero.cta}
