@@ -24,7 +24,7 @@ function App() {
   const t = translations[lang];
 
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <div className="font-sans text-gray-900 bg-cream flex flex-col min-h-screen">
         <Navigation lang={lang} setLang={setLang} t={t} />

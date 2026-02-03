@@ -23,7 +23,7 @@ const Hero = ({ t }) => {
             <div className="absolute right-0 top-20 md:top-0 w-full md:w-1/2 h-full opacity-10 md:opacity-100 pointer-events-none z-0 flex justify-end items-center">
                 <img
                     ref={chimneyRef}
-                    src="/assets/chaminehq.png"
+                    src={`${import.meta.env.BASE_URL}assets/chaminehq.png`}
                     alt="Chimney"
                     className="h-[80vh] md:h-[90vh] object-contain object-bottom-right translate-x-1/4 md:translate-x-0"
                 />

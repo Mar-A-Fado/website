@@ -6,7 +6,7 @@ const Footer = ({ t }) => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-8 md:mb-0 text-center md:text-left">
-                        <img src="/assets/logo_ahq.png" alt="Mar A Fado" className="h-10 w-auto mb-4 mx-auto md:mx-0 opacity-90 grayscale hover:grayscale-0 transition-all duration-500" />
+                        <img src={`${import.meta.env.BASE_URL}assets/logo_ahq.png`} alt="Mar A Fado" className="h-10 w-auto mb-4 mx-auto md:mx-0 opacity-90 grayscale hover:grayscale-0 transition-all duration-500" />
                         <p className="text-gray-400 text-sm max-w-xs">
                             {t.hero.subtitle}
                         </p>

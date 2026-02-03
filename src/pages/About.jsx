@@ -36,7 +36,7 @@ const About = ({ t }) => {
                 <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transform hover:-translate-y-1 transition-transform duration-300">
                     <div className="md:flex">
                         <div className="md:w-1/2 relative h-[400px] md:h-auto">
-                            <img className="absolute inset-0 w-full h-full object-cover object-top" src="/assets/assinatura_a.png" alt={t.about.founderName} />
+                            <img className="absolute inset-0 w-full h-full object-cover object-top" src={`${import.meta.env.BASE_URL}assets/assinatura_a.png`} alt={t.about.founderName} />
                         </div>
                         <div className="p-8 md:p-12 md:w-1/2 flex flex-col justify-center bg-linear-to-br from-white to-gray-50">
                             <div className="uppercase tracking-wide text-sm text-deep-blue font-bold mb-2">{t.about.founderTitle}</div>
