@@ -41,15 +41,38 @@ const VisionMissionValues = ({ t }) => {
                 {/* Values */}
                 <div className="mt-20">
                     <h2 className="text-3xl font-bold text-center text-dark-gray mb-12">{t.vision.valuesTitle}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {t.vision.valuesList.map((value, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:-translate-y-1 transition-transform duration-300">
-                                <h3 className="text-lg font-bold text-deep-blue mb-3">{value.label}</h3>
-                                <p className="text-gray-600">
-                                    {value.text}
-                                </p>
-                            </div>
-                        ))}
+                    <div className="space-y-16">
+                        {t.vision.valuesList.map((value, idx) => {
+                            // Cycle through the 5 images (1-indexed names)
+                            const imageIndex = (idx % 5) + 1;
+                            const imagePath = `${import.meta.env.BASE_URL}assets/tile_detail_${imageIndex}.png`;
+                            const isReverse = idx % 2 !== 0;
+
+                            return (
+                                <div key={idx} className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isReverse ? 'md:flex-row-reverse' : ''}`}>
+
+                                    {/* Text Content */}
+                                    <div className="md:w-1/2 text-center md:text-left">
+                                        <h3 className="text-2xl font-bold text-deep-blue mb-4">{value.label}</h3>
+                                        <p className="text-gray-600 leading-relaxed text-lg">
+                                            {value.text}
+                                        </p>
+                                    </div>
+
+                                    {/* Image Content */}
+                                    <div className="md:w-1/2 flex justify-center">
+                                        <div className="w-48 h-48 md:w-64 md:h-64 overflow-hidden rounded-full border-4 border-deep-blue/10 shadow-lg transform hover:scale-105 transition-transform duration-500">
+                                            <img
+                                                src={imagePath}
+                                                alt=""
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
 

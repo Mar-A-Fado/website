@@ -43,28 +43,54 @@ const Services = ({ t }) => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-                    {categories.map((cat) => (
-                        <div key={cat.key} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
-                            <div className="flex items-start mb-6">
-                                <div className={`p-4 rounded-xl ${cat.bg} mr-5`}>
-                                    {cat.icon}
+                <div className="space-y-24 mb-16">
+                    {categories.map((cat, idx) => {
+                        const isReverse = idx % 2 !== 0;
+                        const imagePath = `${import.meta.env.BASE_URL}assets/service_${cat.key === 'managementSystems' ? 'management' : cat.key === 'facilityManagement' ? 'facility' : cat.key === 'safetyResponsibility' ? 'safety' : 'sustainability'}.png`;
+
+                        return (
+                            <div key={cat.key} className={`flex flex-col md:flex-row items-center gap-10 md:gap-16 ${isReverse ? 'md:flex-row-reverse' : ''}`}>
+
+                                {/* Content Section */}
+                                <div className="md:w-1/2">
+                                    <div className="flex items-center mb-6">
+                                        <div className={`p-4 rounded-xl ${cat.bg} mr-5 shadow-sm`}>
+                                            {cat.icon}
+                                        </div>
+                                        <div>
+                                            <h3 className="text-3xl font-bold text-gray-900 mb-2">{cat.title}</h3>
+                                            <div className="w-16 h-1 bg-deep-blue rounded-full"></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                                        <ul className="space-y-4">
+                                            {cat.items.map((item, i) => (
+                                                <li key={i} className="flex items-start text-gray-700 text-lg">
+                                                    <svg className="w-6 h-6 text-deep-blue mr-3 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                                                    <span className="leading-relaxed">{item}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{cat.title}</h3>
-                                    <div className="w-12 h-1 bg-gray-200 rounded-full"></div>
+
+                                {/* Image Section */}
+                                <div className="md:w-1/2 w-full flex justify-center">
+                                    <div className="w-full max-w-lg rounded-2xl overflow-hidden shadow-lg border-4 border-white transform hover:scale-[1.02] transition-transform duration-500">
+                                        <div className={`relative w-full ${cat.bg.split(' ')[0]} bg-opacity-20`}>
+                                            <img
+                                                src={imagePath}
+                                                alt={cat.title}
+                                                className="w-full h-auto object-cover"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
-                            <ul className="space-y-3 pl-2">
-                                {cat.items.map((item, idx) => (
-                                    <li key={idx} className="flex items-start text-gray-600">
-                                        <svg className="w-5 h-5 text-deep-blue mr-3 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
-                                        <span className="leading-relaxed">{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                        );
+                    })}
                 </div>
 
             </div>

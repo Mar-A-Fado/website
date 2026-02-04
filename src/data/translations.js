@@ -29,10 +29,26 @@ export const translations = {
             title: "Sobre Nós",
             intro: "A Mar A Fado é uma empresa dedicada à co-criação de uma estratégia de sustentabilidade e economia circular através da consultoria | auditoria | formação.",
             historyTitle: "A Nossa História",
-            historyText: "A Mar A Fado surge com a ambição de concretizar uma reabilitação sustentável de uma moradia classificada pela Direção Geral de Património Cultural, de 1928, em Luz de Tavira. Sendo a fundadora descendente de pais algarvios e licenciada em engenharia do ambiente, cedo se apercebeu que a sua vida iria ter o propósito da preservação ambiental, em estreito compromisso com o avanço tecnológico, o desenvolvimento económico e em prol das comunidades.",
+            historyText: [
+                "A Mar A Fado surge com a ambição de concretizar uma reabilitação sustentável de uma moradia classificada pela Direção Geral de Património Cultural, de 1928, em Luz de Tavira, que a CEO & Founder, Inês Viegas, adquiriu para sua morada de família em 2021, em plena pandemia.",
+                "Sendo a fundadora descendente de pais algarvios e licenciada em engenharia do ambiente, cedo se apercebeu que a sua vida iria ter o propósito da preservação ambiental, em estreito compromisso com o avanço tecnológico, o desenvolvimento económico e em prol das comunidades.",
+                "Em 2001, quando terminou a sua licenciatura no IST, o Ambiente era o futuro, porém, o futuro apenas chegou em 2023, com a publicação da Diretiva de Reporte Corporativo de Sustentabilidade (CSRD), de aplicação mandatória, em linha de conta com a dupla materialidade, de impacto e financeiro, reportando as questões ESG da cadeia de valor das empresas.",
+                "Enquanto o futuro não chegava, manteve uma relação estreita com o Ambiente, promovendo, de todos os prismas dos Sistemas de Gestão (consultoria interna, externa, auditoria, formação e gestão) a implementação e certificação destes sistemas em contextos tão diversos quanto a construção de instalações especiais (gasodutos, barragens, muito alta tensão, construção civil de grandes obras), as telecomunicações ou a fileira da pasta de celulose e papel. Por fim, na consultoria em tecnologias de informação.",
+                "Os horizontes foram-se alargando em matérias conexas, como a Qualidade, a Saúde e Segurança do Trabalho, a Energia, a Cadeia de Responsabilidade FSC®, PEFC™ e SBP®, a Gestão do Risco e dos Ativos e, mais tarde, o Facility Management, de mãos dadas com o Wellbeing."
+            ],
             founderTitle: "CEO & Founder",
             founderName: "Inês Filipe Viegas",
-            founderBio: "Licenciada em Engenharia do Ambiente pelo IST, com duas décadas de um background extenso e diverso em sustentabilidade, facility management e qualidade. Verificadora EMAS, Responsável Ambiental em grandes obras (barragens), Head of Workplace & Backoffice Operations na NTT Data Portugal e Coordenadora Corporativa de FM na The Navigator Company.",
+            founderBio: [
+                "Inês Viegas é licenciada em Engenharia do Ambiente pelo IST, com duas décadas de um background extenso e diverso em sustentabilidade, facility management e qualidade. Alguns dos seus maiores achievements incluem:"
+            ],
+            founderAchievements: [
+                { title: "Sustentabilidade", text: "Executou e verificou relatórios de sustentabilidade segundo a AA1000, a GRI, a ESRS e a VSME desde 2008. Foi também Verificadora EMAS e Responsável Ambiental do Reforço de Potência das Barragens de Bemposta e Baixo Sabor." },
+                { title: "Facility Management", text: "Foi Head of Workplace & Backoffice Operations na NTT Data Portugal, S.A e Coordenadora Corporativa de FM na The Navigator Company, gerindo operações em inúmeras localizações e tipologias de edifícios. Foi responsável por projetos de refit de inúmeros m² de ativos de acordo com a metodologia activity based." },
+                { title: "Gestão da Qualidade, Ambiente e Segurança", text: "Ocupou posições de gestora QHSE global e de site, na The Navigator Company, na ENSULMECI e na GTE Consultores, assegurando a compliance com as normas ISO." },
+                { title: "Consultoria, Auditoria e Formação", text: "Como Gestora de Cliente e Auditora na APCER, prestou serviços de certificação nas indústrias da Pasta & Papel, Calçado & Curtumes e Consultoria em Tecnologias de Informação." },
+                { title: "Liderança e Gestão de Equipas", text: "Liderou equipas de diferentes tamanhos e competências, variando entre 15 e 27 pessoas, tendo, em simultâneo, gerido orçamentos e prestadores de serviço de FM." },
+                { title: "Formação e Desenvolvimento Profissional", text: "Completou com sucesso cursos de especialização em Saúde e Segurança do Trabalho, pós-graduações em Qualidade e Gestão." }
+            ]
         },
         vision: {
             title: "Visão | Missão | Valores",
@@ -157,10 +173,24 @@ export const translations = {
             title: "About Us",
             intro: "Mar A Fado is dedicated to co-creating sustainability strategies and circular economy through consultancy, audit, and training.",
             historyTitle: "Our History",
-            historyText: "Mar A Fado was born from the ambition to sustainably rehabilitate a 1928 heritage house in Luz de Tavira. The founder, with Algarvian roots and an Environmental Engineering degree, realized early on that her life's purpose would be environmental preservation, committed to technological progress and community development.",
+            historyText: [
+                "Mar A Fado was born from the ambition to sustainably rehabilitate a 1928 heritage house in Luz de Tavira. The founder, with Algarvian roots and an Environmental Engineering degree, realized early on that her life's purpose would be environmental preservation, committed to technological progress and community development.",
+                "In 2001, when she finished her degree at IST, Environment was the future, but the future only arrived in 2023, with the publication of the Corporate Sustainability Reporting Directive (CSRD), reporting ESG issues in the value chain.",
+                "While the future was arriving, she maintained a close relationship with the Environment, promoting the implementation and certification of systems in contexts as diverse as special facilities construction (pipelines, dams, high voltage), telecommunications, or the pulp and paper industry.",
+                "Horizons broadened into related matters such as Quality, Health and Safety, Energy, Chain of Custody (FSC®, PEFC™, SBP®), Risk and Asset Management, and later Facility Management, hand in hand with Wellbeing."
+            ],
             founderTitle: "CEO & Founder",
             founderName: "Inês Filipe Viegas",
-            founderBio: "Degree in Environmental Engineering from IST, with two decades of extensive background in sustainability, facility management, and quality. EMAS Verifier, Environmental Manager for major dam projects, Head of Workplace at NTT Data Portugal, and Corporate FM Coordinator at The Navigator Company.",
+            founderBio: [
+                "Degree in Environmental Engineering from IST, with two decades of extensive background in sustainability, facility management, and quality. Some of her major achievements include:"
+            ],
+            founderAchievements: [
+                { title: "Sustainability", text: "Executed and verified sustainability reports according to AA1000, GRI, ESRS, and VSME since 2008. Was also an EMAS Verifier and Environmental Manager." },
+                { title: "Facility Management", text: "Head of Workplace & Backoffice Operations at NTT Data Portugal and Corporate FM Coordinator at The Navigator Company." },
+                { title: "QHSE Management", text: "Held global and site QHSE manager positions at The Navigator Company, ENSULMECI, and GTE Consultores." },
+                { title: "Consultancy & Audit", text: "As Client Manager and Auditor at APCER, provided certification services in various industries." },
+                { title: "Leadership", text: "Led teams of different sizes and skills, managing budgets and FM service providers." }
+            ]
         },
         vision: {
             title: "Vision | Mission | Values",
@@ -285,10 +315,24 @@ export const translations = {
             title: "À Propos",
             intro: "Mar A Fado est dédiée à la co-création de stratégies de durabilité et d'économie circulaire à travers le conseil, l'audit et la formation.",
             historyTitle: "Notre Histoire",
-            historyText: "Mar A Fado est née de l'ambition de réhabiliter durablement une maison classée de 1928 à Luz de Tavira. La fondatrice, d'origine algarvienne et ingénieure en environnement, a compris tôt que son but serait la préservation de l'environnement, alliée au progrès technologique.",
+            historyText: [
+                "Mar A Fado est née de l'ambition de réhabiliter durablement une maison classée de 1928 à Luz de Tavira. La fondatrice, d'origine algarvienne et ingénieure en environnement, a compris tôt que son but serait la préservation de l'environnement, alliée au progrès technologique.",
+                "En 2001, lorsqu'elle a terminé son diplôme à l'IST, l'Environnement était l'avenir, mais l'avenir n'est arrivé qu'en 2023, avec la publication de la directive sur les rapports de durabilité des entreprises (CSRD).",
+                "En attendant l'avenir, elle a maintenu une relation étroite avec l'Environnement, promouvant la mise en œuvre et la certification de systèmes dans des contextes aussi divers que la construction d'installations spéciales, les télécommunications ou l'industrie de la pâte à papier.",
+                "Les horizons se sont élargis à des questions connexes telles que la Qualité, la Santé et Sécurité, l'Énergie, la Chaîne de Contrôle (FSC®, PEFC™, SBP®) et plus tard le Facility Management."
+            ],
             founderTitle: "PDG et Fondatrice",
             founderName: "Inês Filipe Viegas",
-            founderBio: "Diplômée en Génie de l'Environnement de l'IST, avec deux décennies d'expérience en durabilité, facility management et qualité. Vérificatrice EMAS, Responsable Environnementale pour de grands barrages, et Coordinatrice Corporative FM chez The Navigator Company.",
+            founderBio: [
+                "Diplômée en Génie de l'Environnement de l'IST, avec deux décennies d'expérience en durabilité, facility management et qualité. Certaines de ses principales réalisations incluent :"
+            ],
+            founderAchievements: [
+                { title: "Durabilité", text: "A réalisé et vérifié des rapports de durabilité selon AA1000, GRI, ESRS et VSME depuis 2008." },
+                { title: "Facility Management", text: "Head of Workplace & Backoffice Operations chez NTT Data Portugal et coordinatrice corporative FM chez The Navigator Company." },
+                { title: "Gestion QHSE", text: "A occupé des postes de responsable QHSE mondial et de site chez The Navigator Company, ENSULMECI et GTE Consultores." },
+                { title: "Conseil et Audit", text: "En tant que gestionnaire de clientèle et auditrice chez APCER, a fourni des services de certification." },
+                { title: "Leadership", text: "A dirigé des équipes de tailles et de compétences différentes, gérant des budgets et des prestataires de services FM." }
+            ]
         },
         vision: {
             title: "Vision | Mission | Valeurs",
