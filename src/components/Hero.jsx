@@ -45,7 +45,6 @@ const Hero = ({ t }) => {
                             className="bg-white text-deep-blue font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all transform hover:-translate-y-1 flex items-center"
                         >
                             {t.hero.cta}
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                         </button>
                     </div>
                 </div>

@@ -18,19 +18,19 @@ const WhyUs = ({ t }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
                     {t.whyUs.items.map((item, index) => (
                         <div key={index} className="group">
-                            <div className="w-20 h-20 mx-auto bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm group-hover:bg-white/20 transition-all duration-300">
+                            <div className="w-48 h-48 mx-auto flex items-center justify-center mb-6 transform group-hover:scale-110 transition-transform duration-500">
                                 {index === 0 && (
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <img src={`${import.meta.env.BASE_URL}assets/mosaic_rebordo.png`} alt="Consultancy" className="w-full h-full object-contain drop-shadow-2xl" />
                                 )}
                                 {index === 1 && (
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                                    <img src={`${import.meta.env.BASE_URL}assets/mosaic_canto.png`} alt="Audit" className="w-full h-full object-contain drop-shadow-2xl" />
                                 )}
                                 {index === 2 && (
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+                                    <img src={`${import.meta.env.BASE_URL}assets/mosaic_invertido.png`} alt="Training" className="w-full h-full object-contain drop-shadow-2xl" />
                                 )}
                             </div>
-                            <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                            <p className="text-blue-100/80 leading-relaxed font-light">
+                            <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                            <p className="text-blue-100/90 leading-relaxed font-light text-lg">
                                 {item.desc}
                             </p>
                         </div>
