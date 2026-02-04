@@ -27,7 +27,7 @@ const Navigation = ({ lang, setLang, t }) => {
                 <div className="flex justify-between items-center h-20">
 
                     <Link to="/" className="shrink-0 cursor-pointer">
-                        <img className="h-12 w-auto" src={`${import.meta.env.BASE_URL}assets/logo_ahq.png`} alt="Mar A Fado Logo" />
+                        <img className="h-20 w-auto transition-transform duration-300 hover:scale-105" src={`${import.meta.env.BASE_URL}assets/logo_nav_new.png`} alt="Mar A Fado Logo" />
                     </Link>
 
 
