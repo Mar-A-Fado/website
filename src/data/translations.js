@@ -141,6 +141,11 @@ export const translations = {
             message: "Mensagem",
             send: "Enviar Mensagem",
             info: "Informações de Contacto",
+            location: "Localização",
+            address: "R. Hermano Neves 18, Piso 3, Escritório 7, V4051, 1600-477 Lisboa",
+            addressLabel: "Morada",
+            phoneLabel: "Telefone",
+            emailLabel: "Email"
         },
     },
     en: {
@@ -283,6 +288,11 @@ export const translations = {
             message: "Message",
             send: "Send Message",
             info: "Contact Information",
+            location: "Location",
+            address: "R. Hermano Neves 18, Piso 3, Escritório 7, V4051, 1600-477 Lisboa",
+            addressLabel: "Address",
+            phoneLabel: "Phone",
+            emailLabel: "Email"
         },
     },
     fr: {
@@ -425,6 +435,11 @@ export const translations = {
             message: "Message",
             send: "Envoyer le message",
             info: "Coordonnées",
+            location: "Emplacement",
+            address: "R. Hermano Neves 18, Piso 3, Escritório 7, V4051, 1600-477 Lisboa",
+            addressLabel: "Adresse",
+            phoneLabel: "Téléphone",
+            emailLabel: "E-mail"
         },
     },
 };
