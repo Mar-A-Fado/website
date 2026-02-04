@@ -2,45 +2,47 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Hero = ({ t }) => {
-    const chimneyRef = useRef(null);
     const navigate = useNavigate();
+    const videoRef = useRef(null);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (chimneyRef.current) {
-                const scrolled = window.scrollY;
-                chimneyRef.current.style.transform = `translateY(${scrolled * 0.2}px)`;
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.80;
+        }
     }, []);
 
     return (
-        <div className="relative bg-cream min-h-screen flex items-center overflow-hidden pt-20">
+        <div className="relative bg-deep-blue min-h-screen flex items-center justify-center overflow-hidden pt-20">
 
-            <div className="absolute right-0 top-20 md:top-0 w-full md:w-1/2 h-full opacity-10 md:opacity-100 pointer-events-none z-0 flex justify-end items-center">
-                <img
-                    ref={chimneyRef}
-                    src={`${import.meta.env.BASE_URL}assets/chaminehq.png`}
-                    alt="Chimney"
-                    className="h-[80vh] md:h-[90vh] object-contain object-bottom-right translate-x-1/4 md:translate-x-0"
-                />
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-black/40 z-10 transition-opacity duration-1000"></div>
+                <video
+                    ref={videoRef}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                >
+                    <source src={`${import.meta.env.BASE_URL}assets/sea_video.mp4`} type="video/mp4" />
+                    {/* Fallback image if video fails to load or acts as placeholder */}
+                    <img src={`${import.meta.env.BASE_URL}assets/hero_bg.jpg`} alt="Background" className="w-full h-full object-cover" />
+                </video>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div className="md:w-3/5 pb-20 md:pb-0">
-                    <h1 className="text-4xl md:text-6xl font-bold text-deep-blue mb-6 leading-tight animate-fade-in-up">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full text-center">
+                <div className="max-w-4xl mx-auto">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-fade-in-up drop-shadow-lg">
                         {t.hero.title}
                     </h1>
-                    <p className="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed font-light animate-fade-in-up delay-100">
+                    <p className="text-xl text-gray-100 mb-10 mx-auto leading-relaxed font-light animate-fade-in-up delay-100 drop-shadow-md">
                         {t.hero.description}
                     </p>
-                    <div className="animate-fade-in-up delay-200">
+                    <div className="animate-fade-in-up delay-200 flex justify-center">
                         <button
                             onClick={() => navigate('/services')}
-                            className="bg-deep-blue text-white font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-opacity-90 transition-all transform hover:-translate-y-1 flex items-center"
+                            className="bg-white text-deep-blue font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-gray-100 transition-all transform hover:-translate-y-1 flex items-center"
                         >
                             {t.hero.cta}
                             <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
