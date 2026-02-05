@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 
 const Services = ({ t }) => {
     const categories = [
@@ -34,6 +35,10 @@ const Services = ({ t }) => {
 
     return (
         <section className="pt-28 pb-20 bg-gray-50">
+            <SEO
+                title={t.services.title}
+                description={t.services.intro}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">

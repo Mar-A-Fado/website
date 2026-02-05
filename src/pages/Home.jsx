@@ -2,9 +2,15 @@ import React from 'react';
 import Hero from '../components/Hero';
 import WhyUs from '../components/WhyUs';
 
+import SEO from '../components/SEO';
+
 const Home = ({ t }) => {
     return (
         <div>
+            <SEO
+                title={t.nav.home}
+                description={t.hero.description}
+            />
             <Hero t={t} />
 
             {/* Short Consultancy Intro Section (from marafado.pt home) */}

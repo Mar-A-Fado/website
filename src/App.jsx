@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import CookieConsentBanner from './components/CookieConsentBanner';
 import Home from './pages/Home';
 import About from './pages/About';
 import VisionMissionValues from './pages/VisionMissionValues';
@@ -10,9 +11,13 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import { translations } from './data/translations';
 
-// ScrollToTop helper component
-const ScrollToTop = () => {
+import usePageTracking from './hooks/usePageTracking';
+
+// ScrollToTop and Analytics helper component
+const RouteHandler = () => {
   const { pathname } = useLocation();
+  usePageTracking();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -25,7 +30,7 @@ function App() {
 
   return (
     <Router basename={import.meta.env.BASE_URL}>
-      <ScrollToTop />
+      <RouteHandler />
       <div className="font-sans text-gray-900 bg-cream flex flex-col min-h-screen">
         <Navigation lang={lang} setLang={setLang} t={t} />
 
@@ -41,6 +46,7 @@ function App() {
         </main>
 
         <Footer t={t} />
+        <CookieConsentBanner lang={lang} />
       </div>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import SEO from '../components/SEO';
 
 const Contact = ({ t }) => {
     const formRef = useRef();
@@ -52,6 +53,10 @@ const Contact = ({ t }) => {
 
     return (
         <section className="pt-28 pb-20 bg-gray-50">
+            <SEO
+                title={t.contact.title}
+                description={t.contact.title}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16 animate-fade-in-up">

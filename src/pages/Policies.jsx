@@ -1,8 +1,14 @@
 import React from 'react';
 
+import SEO from '../components/SEO';
+
 const Policies = ({ t }) => {
     return (
         <section className="pt-28 pb-20 bg-white">
+            <SEO
+                title={t.policies.title}
+                description={t.policies.intro}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="text-center mb-16">

@@ -1,8 +1,14 @@
 import React from 'react';
 
+import SEO from '../components/SEO';
+
 const VisionMissionValues = ({ t }) => {
     return (
         <section className="pt-28 pb-20 bg-gray-50">
+            <SEO
+                title={t.vision.title}
+                description={t.vision.visionText}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Header */}
